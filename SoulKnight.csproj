@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{518E8A50-2749-4B01-958B-FB62AA06CA5C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoulKnight</RootNamespace>
+    <AssemblyName>SoulKnight</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff.cs" />
+    <Compile Include="Contrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contrl.Designer.cs">
+      <DependentUpon>Contrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\MapControllers.cs" />
+    <Compile Include="Controller\Collisions.cs" />
+    <Compile Include="Enemies\Enemies.cs" />
+    <Compile Include="Entites\Entity.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hearts.cs" />
+    <Compile Include="SoulKnight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoulKnight.Designer.cs">
+      <DependentUpon>SoulKnight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hero.cs" />
+    <Compile Include="msg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msg.Designer.cs">
+      <DependentUpon>msg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="Weapons\Weapons.cs" />
+    <EmbeddedResource Include="Contrl.resx">
+      <DependentUpon>Contrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoulKnight.resx">
+      <DependentUpon>SoulKnight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msg.resx">
+      <DependentUpon>msg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_%2852%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dwarf1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dwarf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tileset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon3.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon_knight_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon_golden_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hearts2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_run_anim_f3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_idle_anim_f0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_idle_anim_f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_idle_anim_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_idle_anim_f3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_run_anim_f0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_run_anim_f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_zombie_run_anim_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon_axe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon_big_hammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flask_big_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_menu.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_battle.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minotaur - Sprite Sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerred2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weapon_big_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forcheckpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forcheckpoint2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\11.png" />
+    <None Include="Resources\Control.png" />
+    <None Include="Resources\Control.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
